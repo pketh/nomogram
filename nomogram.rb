@@ -1,12 +1,17 @@
+require 'rubygems'
 require 'sinatra'
 
 get '/' do
-  "Hello World"
+  "☆ﾐ(o*･ω･)/ marketing, or person page if logged in"
 end
 
-# optional / or /#{name} parms
-get '/:greeting/?:name?' do
-  "#{params[:greeting]} #{params[:name] ? params[:name] : 'world'}!!"
+get '/:person/?' do |person|
+  "see all projects for person: #{person}"
+end
+
+get '/:person/:project/?' do |person, project|
+  "retrieve #{person}'s project named #{project}."
+  # + If person exists, but project doesn't - show a unique error pg with person's info/email
 end
 
 
