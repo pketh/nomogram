@@ -1,0 +1,3 @@
+# (^._.^)ﾉ
+
+set :session_secret, 'B6AQNPT51GFO3V2TID2GUSGZZPTBNBWC4TI33KZ20YBCFDBB'
