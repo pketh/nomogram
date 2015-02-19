@@ -12,6 +12,20 @@ class Project
   include DataMapper::Resource
   belongs_to :person
   property :id, Serial
+  has n, :posts
+end
+
+class Post
+  include DataMapper::Resource
+  belongs_to :project
+  # properties ...
+  has n, :comments
+end
+
+class Comment
+  include DataMapper::Resource
+  belongs_to :post
+  # properties ...
 end
 
 DataMapper.finalize
