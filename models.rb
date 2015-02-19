@@ -18,6 +18,7 @@ end
 class Post
   include DataMapper::Resource
   belongs_to :project
+  property :id, Serial
   # properties ...
   has n, :comments
 end
@@ -25,6 +26,7 @@ end
 class Comment
   include DataMapper::Resource
   belongs_to :post
+  property :id, Serial
   # properties ...
 end
 
