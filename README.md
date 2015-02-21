@@ -25,6 +25,8 @@ Then visit `http://nomogram.dev`
 
 (ღ˘⌣˘ღ) ♫･*-.｡. .｡.-*･
 
-## Deploy me
+## Deploy me to [Heroku][heroku]
 
-.. `$ deploy`
+`$ git push heroku`
+
+[heroku]:https://devcenter.heroku.com/articles/git
