@@ -1,9 +1,10 @@
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
-
 require './models'
 require './kittens'
+
+# 🌺 Hello
 
 get '/' do
   # erb :index
@@ -11,7 +12,7 @@ get '/' do
   # see 'using sessions' for accessing cookie vals
 end
 
-# 👫 Person Routes
+# 🙋 Person Routes
 
 get '/:person/?' do |person|
   "see all projects for person: #{person}"
@@ -32,7 +33,7 @@ post '/:person/new/?' do |name, email|
   end
 end
 
-get '/:person/edit/?' do
+get '/:person/profile/?' do
   # @person = Person.get(params[:id])
   erb :person_edit
 end
@@ -41,12 +42,14 @@ post '/:person/update/?' do |name, email|
   # @person = Person.get(params[:name].to_s)
 end
 
-get '/:person/delete/?' do
+post '/:person/delete/?' do |name|
   Person.get(params[:id]).destroy
-  redirect '/miss-you-already'
+  if person.destroy
+    "ヾ(＾∇＾) We miss you already #{name}. Come back anytime!"
+  end
 end
 
-# 🎆 Project Routes
+# 💃 Project Routes
 
 get '/:person/:project/?' do |person, project|
   "retrieve #{person}'s project named
@@ -55,7 +58,7 @@ get '/:person/:project/?' do |person, project|
 end
 
 post '/:person/project/new/?' do |name, description|
-  # "#{person}"
+  # "#{person}" how to set up belonging rels?
   @project = Project.create(
     :created => DateTime.now,
     :name => name,
@@ -71,6 +74,18 @@ post '/:person/project/new/?' do |name, description|
 end
 
 post '/:person/:project/update/?' do |name, description|
-  # "#{person} and #{project}"
-  # @person = Person.get(params[:id].to_i)
+  #
 end
+
+# 🎆 Post Routes
+
+## get -> get all posts belonging to a project
+## post -> add post to project
+## post -> update post
+## post -> reorder posts
+
+# 👍 Comment Routes
+
+## get -> get all comments belonging to a post
+## post -> add a comment to a post
+## post -> update a specific comment
