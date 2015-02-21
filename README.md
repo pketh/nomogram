@@ -24,3 +24,7 @@ $ ln -s ~/Projects/nomogram
 Then visit `http://nomogram.dev`
 
 (ღ˘⌣˘ღ) ♫･*-.｡. .｡.-*･
+
+## Deploy me
+
+.. `$ deploy`
